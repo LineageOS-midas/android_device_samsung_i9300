@@ -38,8 +38,15 @@ BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 # Recover
 TARGET_RECOVERY_FSTAB := device/samsung/i9300/fstab.smdk4x12
-BOARD_USES_FULL_RECOVERY_IMAGE := false
-BOARD_USES_RECOVERY_AS_BOOT := false
+#BOARD_USES_FULL_RECOVERY_IMAGE := false
+#BOARD_USES_RECOVERY_AS_BOOT := false
+TARGET_RECOVERY_PIXEL_FORMAT :=  BGRA_8888
+TARGET_RECOVERY_UI_BRIGHTNESS_FILE := /sys/class/backlight/panel/brightness
+TARGET_RECOVERY_UI_MAX_BRIGHTNESS_FILE := /sys/class/backlight/panel/max_brightness
+
+#ifeq ($(WITH_TWRP),true)
+include $(LOCAL_PATH)/twrp.mk
+#endif
 
 TARGET_USERIMAGES_USE_EXT4 := true
 

@@ -45,6 +45,3 @@ BOARD_VNDK_RUNTIME_DISABLE := false
 BOARD_VNDK_VERSION := current
 
 DEVICE_MANIFEST_FILE := device/putti/i9305/manifest.xml
-
-BOARD_USES_DRM_HWCOMPOSER := true
-TARGET_USES_HWC2 := true

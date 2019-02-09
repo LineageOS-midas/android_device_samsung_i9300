@@ -15,4 +15,3 @@
 #
 
 ro.sf.lcd_density=320
-ro.hardware.hwcomposer=drm

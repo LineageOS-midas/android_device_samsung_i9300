@@ -23,10 +23,11 @@ PRODUCT_PACKAGES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
-    gralloc.default \
-    hwcomposer.default \
-    libEGL_swiftshader \
-    libGLESv2_swiftshader \
+    gralloc.gbm \
+    hwcomposer.drm \
+    libGLES_mesa \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -82,10 +83,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vr@1.0-impl \
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service \
+
+# DRM – check if this needs to be removed!
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
+
 PRODUCT_COPY_FILES += \
     device/putti/i9305/fstab.smdk4x12:root/fstab.smdk4x12 \
     device/putti/i9305/init.smdk4x12.rc:root/init.smdk4x12.rc \
     device/putti/i9305-kernel/Image.gz-dtb:kernel \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \

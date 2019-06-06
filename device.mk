@@ -105,3 +105,8 @@ PRODUCT_COPY_FILES += \
 
 # Hack to get root on serial console
 PRODUCT_COPY_FILES += device/samsung/i9305/init.rc:root/init.rc
+
+# ADB support
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=adb

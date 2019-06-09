@@ -109,4 +109,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=adb
 
 # Hack to get a working GateKeeper
-PRODUCT_PACKAGES += gatekeeper.i9305
+PRODUCT_PACKAGES += gatekeeper.default

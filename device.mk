@@ -30,21 +30,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
 
 # Audio
-PRODUCT_PACKAGES += \
-    audio.primary.i9305 \
-    audio.primary.i9305_legacy \
-
-# Audio HAL packages
-PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.soundtrigger@2.0-impl \
-
-# Hack to get the device booting with no audio
-PRODUCT_PACKAGES += audio.r_submix.default
-PRODUCT_PACKAGES += android.hardware.audio@4.0-impl:32
-PRODUCT_PACKAGES += android.hardware.audio.effect@4.0-impl:32
+PRODUCT_PACKAGES += audio.primary.i9305
+PRODUCT_PACKAGES += audio.a2dp.default
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \

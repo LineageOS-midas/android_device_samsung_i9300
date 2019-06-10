@@ -16,7 +16,7 @@
 
 #include <hardware/hardware.h>
 #include <hardware/gatekeeper.h>
-#define LOG_TAG "GoldfishGatekeeper"
+#define LOG_TAG "I9305Gatekeeper"
 #include <cutils/log.h>
 
 #include <string.h>
@@ -118,7 +118,7 @@ struct gatekeeper_module HAL_MODULE_INFO_SYM __attribute__((visibility("default"
         .module_api_version = GATEKEEPER_MODULE_API_VERSION_0_1,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = GATEKEEPER_HARDWARE_MODULE_ID,
-        .name = "Goldfish GateKeeper HAL",
+        .name = "I9305 GateKeeper HAL",
         .author = "The Android Open Source Project",
         .methods = &gatekeeper_module_methods,
         .dso = 0,

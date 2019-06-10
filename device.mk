@@ -32,7 +32,12 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += audio.primary.i9305
 PRODUCT_PACKAGES += audio.primary.i9305_legacy
-PRODUCT_PACKAGES += audio.a2dp.default
+
+# A2DP
+PRODUCT_PACKAGES += \
+  audio.a2dp.default \
+  android.hardware.bluetooth.a2dp@1.0-impl \
+  android.hardware.bluetooth.a2dp@1.0-service \
 
 # Sound trigger
 PRODUCT_PACKAGES += \

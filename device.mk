@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += audio.primary.i9305
+PRODUCT_PACKAGES += audio.primary.i9305_legacy
 PRODUCT_PACKAGES += audio.a2dp.default
 
 PRODUCT_COPY_FILES += \

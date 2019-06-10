@@ -113,3 +113,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Hack to get a working GateKeeper
 PRODUCT_PACKAGES += gatekeeper.default
+
+# Override init.rc to add hacks inside
+PRODUCT_COPY_FILES += device/samsung/i9305/init.rc:root/init.rc

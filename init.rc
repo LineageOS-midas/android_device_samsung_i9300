@@ -558,21 +558,7 @@ on post-fs-data
 
 # It is recommended to put unnecessary data/ initialization from post-fs-data
 # to start-zygote in device's init.rc to unblock zygote start.
-on zygote-start && property:ro.crypto.state=unencrypted
-    # A/B update verifier that marks a successful boot.
-    exec_start update_verifier_nonencrypted
-    start netd
-    start zygote
-    start zygote_secondary
-
-on zygote-start && property:ro.crypto.state=unsupported
-    # A/B update verifier that marks a successful boot.
-    exec_start update_verifier_nonencrypted
-    start netd
-    start zygote
-    start zygote_secondary
-
-on zygote-start && property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+on zygote-start
     # A/B update verifier that marks a successful boot.
     exec_start update_verifier_nonencrypted
     start netd

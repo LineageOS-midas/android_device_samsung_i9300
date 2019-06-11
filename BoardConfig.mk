@@ -28,11 +28,11 @@ TARGET_NO_BOOTLOADER := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/replicant/linux
-TARGET_KERNEL_CONFIG := replicant_i9305_defconfig
+TARGET_KERNEL_CONFIG := replicant_i9300_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 # Recover
-TARGET_RECOVERY_FSTAB := device/samsung/i9305/fstab.smdk4x12
+TARGET_RECOVERY_FSTAB := device/samsung/i9300/fstab.smdk4x12
 BOARD_USES_FULL_RECOVERY_IMAGE := false
 BOARD_USES_RECOVERY_AS_BOOT := false
 
@@ -60,4 +60,4 @@ BOARD_GPU_DRIVERS := swrast
 TARGET_USES_64_BIT_BINDER := true
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
-DEVICE_MANIFEST_FILE := device/samsung/i9305/manifest.xml
+DEVICE_MANIFEST_FILE := device/samsung/i9300/manifest.xml

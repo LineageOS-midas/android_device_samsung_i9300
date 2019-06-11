@@ -30,8 +30,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
 
 # Audio
-PRODUCT_PACKAGES += audio.primary.i9305
-PRODUCT_PACKAGES += audio.primary.i9305_legacy
+PRODUCT_PACKAGES += audio.primary.i9300
+PRODUCT_PACKAGES += audio.primary.i9300_legacy
 
 # A2DP
 PRODUCT_PACKAGES += \
@@ -47,7 +47,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    device/samsung/i9305/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
+    device/samsung/i9300/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
     frameworks/av/services/audiopolicy/config/audio_policy_configuration_generic.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/primary_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/primary_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
@@ -108,8 +108,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
 
 PRODUCT_COPY_FILES += \
-    device/samsung/i9305/fstab.smdk4x12:root/fstab.smdk4x12 \
-    device/samsung/i9305/init.smdk4x12.rc:root/init.smdk4x12.rc \
+    device/samsung/i9300/fstab.smdk4x12:root/fstab.smdk4x12 \
+    device/samsung/i9300/init.smdk4x12.rc:root/init.smdk4x12.rc \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \

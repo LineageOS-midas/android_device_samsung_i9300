@@ -126,4 +126,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += gatekeeper.default
 
 # Enable flashing through heimdall
-PRODUCT_COPY_FILES += device/samsung/i9305/resize2fs_partitions.sh:system/bin/resize2fs_partitions.sh
+PRODUCT_COPY_FILES += device/samsung/i9300/resize2fs_partitions.sh:system/bin/resize2fs_partitions.sh
+
+# HACK: prevent the device to go in suspend because it's annoying during early
+# development. Remove afterward as it consume way more energy this way.
+PRODUCT_COPY_FILES += device/samsung/i9300/prevent_suspend.sh:system/bin/prevent_suspend.sh
+PRODUCT_COPY_FILES += device/samsung/i9300/prevent_suspend.rc:system/etc/init/prevent_suspend.rc
+

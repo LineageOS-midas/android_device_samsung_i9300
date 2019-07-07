@@ -36,12 +36,6 @@ PRODUCT_PACKAGES += audio.primary.i9300
 PRODUCT_PACKAGES += audio.primary.i9300_legacy
 PRODUCT_PACKAGES += audio.a2dp.default
 
-# Sound trigger
-PRODUCT_PACKAGES += \
-    sound_trigger.stub.default \
-    android.hardware.soundtrigger@2.1-impl \
-    android.hardware.soundtrigger@2.1-service \
-
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     device/samsung/i9300/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \

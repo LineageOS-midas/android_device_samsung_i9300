@@ -33,7 +33,6 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += audio.primary.i9300
-PRODUCT_PACKAGES += audio.primary.i9300_legacy
 PRODUCT_PACKAGES += audio.a2dp.default
 
 PRODUCT_COPY_FILES += \

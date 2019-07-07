@@ -36,17 +36,18 @@ TARGET_KERNEL_SOURCE := kernel/replicant/linux
 TARGET_KERNEL_CONFIG := lineageos_i9300_defconfig
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
-# Recover
+# Recovery
+LZMA_RAMDISK_TARGETS := recovery
 TARGET_RECOVERY_FSTAB := device/samsung/i9300/fstab.smdk4x12
-#BOARD_USES_FULL_RECOVERY_IMAGE := false
-#BOARD_USES_RECOVERY_AS_BOOT := false
+BOARD_USES_FULL_RECOVERY_IMAGE := false
+BOARD_USES_RECOVERY_AS_BOOT := false
 TARGET_RECOVERY_PIXEL_FORMAT :=  BGRA_8888
 TARGET_RECOVERY_UI_BRIGHTNESS_FILE := /sys/class/backlight/panel/brightness
 TARGET_RECOVERY_UI_MAX_BRIGHTNESS_FILE := /sys/class/backlight/panel/max_brightness
 
-#ifeq ($(WITH_TWRP),true)
-include $(LOCAL_PATH)/twrp.mk
-#endif
+ifeq ($(WITH_TWRP),true)
+include device/samsung/i9300/twrp.mk
+endif
 
 TARGET_USERIMAGES_USE_EXT4 := true
 
@@ -60,16 +61,16 @@ BOARD_FLASH_BLOCK_SIZE := 512
 TARGET_USES_MKE2FS := true
 
 # Disable VNDK at this point
-PRODUCT_FULL_TREBLE_OVERRIDE := true
 BOARD_VNDK_RUNTIME_DISABLE := true
-PRODUCT_USE_VNDK_OVERRIDE := false
-#BOARD_VNDK_VERSION := current
+BOARD_VNDK_VERSION := current
+PRODUCT_FULL_TREBLE := false
+PRODUCT_FULL_TREBLE_OVERRIDE := false
 
 TARGET_USES_HWC2 := true
 BOARD_USES_DRM_HWCOMPOSER := true
 BOARD_GPU_DRIVERS := swrast
 
 TARGET_USES_64_BIT_BINDER := true
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+#BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 DEVICE_MANIFEST_FILE := device/samsung/i9300/manifest.xml

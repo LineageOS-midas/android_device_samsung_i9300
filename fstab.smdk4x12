@@ -1,19 +1,15 @@
-#
-# Copyright 2018 Joonas Kylmälä
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+# Android fstab file.
+# <src>						<mnt_point>		<type>		<mnt_flags and options>		<fs_mgr_flags>
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+/dev/block/mmcblk2p3        /efs			ext4		noatime,nosuid,nodev,errors=panic	                    wait
+/dev/block/mmcblk2p9     /system			ext4		ro,noatime		                                        wait
+/dev/block/mmcblk2p8     /cache			ext4		noatime,nosuid,nodev,errors=panic		wait
+/dev/block/mmcblk2p12   /data			ext4		noatime,nosuid,nodev,errors=panic		wait,check,encryptable=footer
 
-/dev/block/mmcblk2p8	/cache	ext4 rw,noatime wait
-/dev/block/mmcblk2p9	/	ext4 ro,noatime wait
-/dev/block/mmcblk2p12	/data	ext4 rw,noatime wait
+# recovery
+/dev/block/mmcblk2p5            /boot                           emmc            defaults     recoveryonly
+/dev/block/mmcblk2p6            /recovery                       emmc            defaults     recoveryonly
+/dev/block/mmcblk2p7            /modem                          emmc            defaults     recoveryonly
+
+/dev/block/mmcblk0p1            /external_sd                           vfat            defaults recoveryonly

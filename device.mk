@@ -33,7 +33,23 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += audio.primary.i9300
-PRODUCT_PACKAGES += audio.a2dp.default
+PRODUCT_PACKAGES += audio.primary.i9300_legacy
+PRODUCT_PACKAGES += android.hardware.audio@4.0-impl
+PRODUCT_PACKAGES += android.hardware.audio@4.0-service
+PRODUCT_PACKAGES += android.hardware.audio.effect@4.0-impl
+PRODUCT_PACKAGES += android.hardware.audio.effect@4.0-service
+
+# A2DP
+PRODUCT_PACKAGES += \
+  audio.a2dp.default \
+  android.hardware.bluetooth.a2dp@1.0-impl \
+  android.hardware.bluetooth.a2dp@1.0-service \
+
+# Sound trigger
+PRODUCT_PACKAGES += \
+    sound_trigger.stub.default \
+    android.hardware.soundtrigger@2.1-impl \
+    android.hardware.soundtrigger@2.1-service \
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libeffects/data/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -106,6 +122,12 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_tv.xml:system/etc/media_codecs_google_tv.xml \
+
+# Get root on the serial console for -eng builds
+# This can help debugging early boot issues
+ifeq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_COPY_FILES += device/samsung/i9300/console.rc:system/etc/init/console.rc
+endif
 
 # ADB support
 PRODUCT_PROPERTY_OVERRIDES += \

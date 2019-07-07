@@ -34,12 +34,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += audio.primary.i9300
 PRODUCT_PACKAGES += audio.primary.i9300_legacy
-
-# A2DP
-PRODUCT_PACKAGES += \
-  audio.a2dp.default \
-  android.hardware.bluetooth.a2dp@1.0-impl \
-  android.hardware.bluetooth.a2dp@1.0-service \
+PRODUCT_PACKAGES += audio.a2dp.default
 
 # Sound trigger
 PRODUCT_PACKAGES += \

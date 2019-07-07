@@ -26,6 +26,9 @@ TARGET_BOOTLOADER_BOARD_NAME := smdk4x12
 
 TARGET_NO_BOOTLOADER := true
 
+KERNEL_TOOLCHAIN := /media/system/root/LOS15/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-8.3/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/replicant/linux
 TARGET_KERNEL_CONFIG := replicant_i9300_defconfig

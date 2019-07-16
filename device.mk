@@ -25,11 +25,13 @@ PRODUCT_PACKAGES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
-    gralloc.gbm \
-    hwcomposer.drm \
+    gralloc.exynos4 \
+    hwcomposer.exynos4 \
     libGLES_mesa \
     android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
+    android.hardware.graphics.composer@2.1-service
+
+PRODUCT_COPY_FILES += device/samsung/i9300/prebuilt/libGLES_mali.so:system/vendor/lib/egl/libGLES_mali.so
 
 # Audio
 PRODUCT_PACKAGES += audio.primary.i9300
